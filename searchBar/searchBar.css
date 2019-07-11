@@ -1,0 +1,64 @@
+.SearchBar__Heading {
+    display: inline-block;
+    padding-bottom: 15px;
+}
+ .SearchBoxLabel {
+     margin: 0px;
+     display: inline-block;
+     padding-left: 380px;
+ }
+
+ .SearchBar {
+     margin-top: 0px;
+     background-color: rgb(165, 164, 164);
+  
+ }
+
+ button {
+     border-radius: 5px;
+     border: 3px solid rgb(12, 125, 230);
+     height: 30px;
+     width: 100px;
+     font-size: 20px;
+     margin-top: 10px;
+ }
+
+ button:hover {
+     cursor: pointer;
+ }
+ .printTypeForm {
+    display: inline-block;
+    margin-left: 250px;
+    margin-top: 10px;
+    
+}
+
+select {
+    width: 200px;
+}
+
+.bookTypeForm {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+   
+}
+
+.SearchBox {
+    margin-left: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+   
+   
+}
+
+input {
+    height: 25px;
+    background-color: lightyellow;
+    font-size: 15px;
+}
+
+.filterOptions {
+    background-color: lightgrey;
+    padding-bottom: 20px;
+}
