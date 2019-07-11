@@ -10,6 +10,7 @@ class SearchBar extends Component {
       printType: " ",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   handleSubmit(e) {
@@ -21,10 +22,22 @@ class SearchBar extends Component {
      console.log('filter state', this.state.filter)
      console.log('printType', this.state.printType)
    }
+
+   submitForm(e) {
+     
+     e.preventDefault();
+     const searchTerm = this.state.searchTerm;
+     const filter = this.state.filter;
+     const printType = this.state.printType;
+     const {onSubmit} = this.props;
+     onSubmit(searchTerm, printType, filter);
+   }
+
+
   
   render(){
     
-    return <form className="SearchBar" onSubmit={this.handleSubmit}>
+    return <form className="SearchBar" onSubmit={this.submitForm}>
             <div className="SearchBar__Heading">
             <label className="SearchBoxLabel" htmlFor="searchBox">Search:</label>
             <input 
