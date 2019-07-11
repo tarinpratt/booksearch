@@ -24,8 +24,12 @@ class App extends Component {
       printType,
       filter
     });
-  }
+    console.log('searchTerm', searchTerm)
+    console.log('printType', printType)
+    console.log('filter', filter)
 
+}
+  
 
 
   componentDidMount() {
@@ -35,8 +39,8 @@ class App extends Component {
     //param values for filter can either be no filter, free-ebooks, paid-ebooks, or ebooks
     //const printTypeUrl = '&printType='
     //param values for printType can be all, books, or magazines
-    
-    fetch('https://www.googleapis.com/books/v1/volumes?q={this.state.searchTerm}&filter={this.state.filter}&printType={this.state.printType}&key=AIzaSyAJCAAFBbMPmzk9w8xmA4XB_iqeTvSyaps')
+  
+    fetch('https://www.googleapis.com/books/v1/volumes?q={searchTerm}&filter={filter}&printType={printType}&key=AIzaSyAJCAAFBbMPmzk9w8xmA4XB_iqeTvSyaps')
     .then(res => {
       if(!res.ok) {
         throw new Error('Something went wrong, please try again later.');
@@ -57,6 +61,7 @@ class App extends Component {
       this.setState({
         error: err.message
       });
+    
     });
     /*
         console.log(data.items[0].volumeInfo)
