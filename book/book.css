@@ -1,3 +1,36 @@
-.displayBooks {
+
+
+.books {
+    border-bottom: 2px grey solid;
+    display: inline-block;
+    width: 100%;
+}
+
+.imageLink {
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.bookInfo {
+    display: inline-block;
+    width: 900px;
     text-align: center;
+    margin-left: 20px;
+}
+
+.bookAuthor {
+    margin-bottom: 20px;
+}
+.bookPrice {
+    margin-bottom: 20px;
+}
+
+.bookDescription {
+    margin-bottom: 20px;
+}
+
+h2 a {
+    text-decoration: none;
+    color: black;
 }
