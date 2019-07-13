@@ -6,17 +6,15 @@ import './price.css';
 class Price extends Component {
     
     render(){  
-      if(this.props.bookPrice.isEbook === true){
+     console.log(this.props.bookPrice)
         return (
             <div className="displayPrice">
                 Price: ${this.props.bookPrice.listPrice.amount}
             </div>
           ) 
-      } else {
-          return <div></div>;
-      }
+            
 
-}
+    }
 }
     
 export default Price;
