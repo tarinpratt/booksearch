@@ -5,9 +5,9 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: " ",
-      filter: " ",
-      printType: " ",
+      q: " ",
+      filter: "None",
+      printType: "All ",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -18,19 +18,16 @@ class SearchBar extends Component {
      this.setState({
        [e.target.name]: e.target.value
      });
-     console.log('search state', this.state.searchTerm)
-     console.log('filter state', this.state.filter)
-     console.log('printType', this.state.printType)
+
    }
 
    submitForm(e) {
-     
      e.preventDefault();
-     const searchTerm = this.state.searchTerm;
+     const q = this.state.q;
      const filter = this.state.filter;
      const printType = this.state.printType;
      const {onSubmit} = this.props;
-     onSubmit(searchTerm, printType, filter);
+     onSubmit(q, printType, filter);
    }
 
 
@@ -42,10 +39,9 @@ class SearchBar extends Component {
             <label className="SearchBoxLabel" htmlFor="searchBox">Search:</label>
             <input 
         type="text" 
-        className="searchTerm" 
-        placeholder="henry" 
-        name="searchTerm"
-        value={this.state.searchTerm}
+        className="q" 
+        name="q"
+        value={this.state.q}
         onChange={this.handleSubmit}
 
               />
@@ -56,10 +52,10 @@ class SearchBar extends Component {
           <label htmlFor="printType">Print Type:</label>
           <select 
           id="printType" 
-          name="printType" 
+          name="printType"
           value={this.state.printType}
           onChange={this.handleSubmit}>
-            <option value="all">All</option>
+            <option value="all" >All</option>
             <option value="books">Books</option>
             <option value="magazines">Magazines</option>
           </select>
@@ -72,7 +68,7 @@ class SearchBar extends Component {
           value={this.state.filter}
           onChange={this.handleSubmit}>
             <option value="None">No Filter</option>
-            <option value="free-ebooks"> Free ebooks</option>
+            <option value="free-ebooks" > Free ebooks</option>
             <option value="paid-ebooks">Paid ebooks</option>
             <option value="ebooks">ebooks</option>
           </select>
